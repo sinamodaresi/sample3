@@ -27,10 +27,9 @@ function init(){
     canvas.addEventListener("mousemove",mouseTrack);
 
 
-    // draw();
-    // drawCar();
+    
     drawBall();
-    setInterval(drawgame,17);//1000 ms= 1s
+    setInterval(drawgame,17);
 }
 function mouseTrack(e){
     bary = e.clientY - canvas.offsetTop - (barh/2);
@@ -73,7 +72,7 @@ function drawBall(){
 
     if(x+r >canvas.width )
     {
-        alert("you lose-game over-your score:"+score);
+        alert("باختید "+"امتیاز"+score);
         resetGame();
     }
         
@@ -85,7 +84,7 @@ function drawBall(){
         dy=dy*-1;
        
     if(y+r >canvas.height )
-        dy=dy * -1;//agar + te manfish kon agar manfie mosbatesh kon
+        dy=dy * -1;
 
   
     if(x+r >barx )
@@ -94,8 +93,8 @@ function drawBall(){
          {
             dx=dx * -1;
             score++;
-            r=r-2*0.9; //change the ball size:
-            // dx=dx*1.1;//change ball speed:
+            r=r-2*0.9;
+            
             barh = barh * 0.9;
 
          } 
@@ -109,10 +108,10 @@ function drawBall(){
 
 }
 
-///////////////az inja moraba shoro mishe
+
 function drawCar(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    ///badane mashin
+    
     ctx.beginPath();
     ctx.fillStyle="blue";
     x+=100;
@@ -121,13 +120,13 @@ function drawCar(){
     ctx.fillRect(x,y,w,h);
     ctx.closePath();
 
-    //tayer samte chap
+    
     ctx.beginPath();
     ctx.arc(x+30,y+h,20,2* Math.PI,false);
     ctx.fillStyle="black";
     ctx.fill();
 
-    //tayer samte rast
+   
     ctx.beginPath();
     ctx.arc(x+w-30,y+h,20,2* Math.PI,false);
     ctx.fillStyle="black";
@@ -141,35 +140,7 @@ function drawCar(){
 
 function draw(){
 
-/*
-    ctx.beginPath();
-    ctx.fillStyle= "red";//range dakhele moraba
-    ctx.strokeStyle="black";//range hashie
-    ctx.lineWidth=10;
-   //ctx.fillRect(100,100,300,300)//(x.y.w.h)
-    //ctx.strokeRect(100,100,300,300);
-    ctx.rect(0,0,500,160);//chahar goosh mikeshe
-    ctx.fill();// poresh mikone
-    ctx.stroke();//khato doresh mikeshe
-    ctx.closePath();
 
-///////////////////////////////////////
-    ctx.beginPath();
-    ctx.fillStyle= "blue";//range dakhele moraba
-    ctx.strokeStyle="black";//range hashie
-    ctx.lineWidth=10;
-   //ctx.fillRect(100,100,300,300)//(x.y.h.w)
-    //ctx.strokeRect(100,100,300,300);
-    ctx.rect(0,500-160,500,160);//chahar goosh mikeshe
-    ctx.fill();// poresh mikone
-    ctx.stroke();//khato doresh mikeshe
-    ctx.closePath();
-*/
-
-    // ctx.arc(250,250,100,0,2*Math.PI,false);
-    // ctx.fillStyle="red";
-    // ctx.fill();
-///////////////////mosalas////////////////////////////
 ctx.beginPath();
 ctx.moveTo(100,100);
 ctx.lineTo(200,100);
